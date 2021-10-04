@@ -1,9 +1,22 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 
-var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-grd.addColorStop(0, "red");
-grd.addColorStop(1, "white");
+let width = 400;
+let height = 400;
+let w = 40;
+let h = 40;
 
-ctx.fillStyle = grd;
-ctx.fillRect(10, 10, 150, 80);
+var cols = width/w;
+var rows = height/h;
+
+function startMaze() {
+    myMaze();
+}
+
+var myMaze = function() {
+    for(let i = 0; i < rows; i++) {
+        for(let f = 0; f < cols; f++) {
+            ctx.fillRect(i * w, f * h, w - 1, h -1);
+        }
+    }
+}

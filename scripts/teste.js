@@ -4,16 +4,13 @@ let height = 400;
 let w = 40;
 let h = 40;
 
-var cols = width/w;
-var rows = height/h;
-
-function startMaze() {
-    myMaze.start();
-}
+var cols = height/w;
+var rows = width/h;
 
 var myMaze = {
 
     canvas : document.getElementById("myCanvas"),
+
     start : function() {
         this.canvas.width = width;
         this.canvas.height = height;
@@ -22,12 +19,23 @@ var myMaze = {
     }    
 }
 
-function draw() {
+function startMaze() {
+    myMaze.start();
+}
+
+var loop = function() {
+    //lógica
+    //render
+    renderTest();
+    window.requestAnimationFrame(loop);
+}
+window.requestAnimationFrame(loop);
+
+
+var renderTest = function() {
     for(let i = 0; i < rows; i++) {
         for(let f = 0; f < cols; f++) {
             myMaze.context.fillRect(i * w, f * h, w - 1, h -1);
         }
     }
 }
-
-setInterval(draw, 10);

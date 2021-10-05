@@ -7,6 +7,13 @@ class Cell {
         this.walls = [true, true,  true, true];
     }
 
+    checkNeighbors(grid, rows, cols) {
+        var neighbors = [];
+
+        var right = grid[(this.i + 1) + this.f * cols];
+
+    }
+
     show(context, scale) {
         var x = this.i * scale; 
         var y = this.f * scale;
@@ -58,8 +65,7 @@ class MyMaze {
             }
         }
 
-        this.current = this.grid[0];
-        console.log(this.current);
+        this.current = this.grid[50];
 
         this.canvas = document.getElementById(idCanvas);
         this.canvas.width = this.width;
@@ -79,13 +85,14 @@ class MyMaze {
 
     run() {
         if(this.isRunning) {
-            this.kick();
             this.render();
+            this.kick();
         }
     }
 
     kick() {
         this.current.visited = true;
+        this.current.checkNeighbors(this.grid, this.rows, this.cols);
     }
 
     render() {

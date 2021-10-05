@@ -1,41 +1,58 @@
 
-let width = 400;
-let height = 400;
-let w = 40;
-let h = 40;
+class MyMaze {
 
-var cols = height/w;
-var rows = width/h;
+    constructor(width, height, scaleW, scaleH, idCanvas) {
+        this.width = width;
+        this.height = height;
+        this.scaleW = scaleW;
+        this.scaleH = scaleH;
 
-var myMaze = {
+        this.rows = height / scaleH;
+        this.cols = width / scaleW;
 
-    canvas : document.getElementById("myCanvas"),
+        this.grid = [];
 
-    start : function() {
-        this.canvas.width = width;
-        this.canvas.height = height;
+        this.canvas = document.getElementById(idCanvas);
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
         this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-    }    
+
+        this.isRunning = false;
+    }
+
+    start() {
+        this.isRunning = true;
+    }
+
+    stop() {
+        this.isRunning = false;
+    }
+
+    render() {
+        if(this.isRunning) {
+            for(let i = 0; i < this.rows; i++) {
+                for(let f = 0; f < this.cols; f++) {
+                    this.context.fillRect(i * this.scaleW, f * this.scaleH, this.scaleW - 1, this.scaleH - 1);
+                }
+            }
+        }
+    }
 }
+
+myMaze = new MyMaze(400, 400, 40, 40, "myCanvas");
 
 function startMaze() {
     myMaze.start();
 }
 
+function stopMaze() {
+    myMaze.stop();
+}
+
 var loop = function() {
     //lógica
     //render
-    renderTest();
+    myMaze.render();
     window.requestAnimationFrame(loop);
 }
 window.requestAnimationFrame(loop);
-
-
-var renderTest = function() {
-    for(let i = 0; i < rows; i++) {
-        for(let f = 0; f < cols; f++) {
-            myMaze.context.fillRect(i * w, f * h, w - 1, h -1);
-        }
-    }
-}

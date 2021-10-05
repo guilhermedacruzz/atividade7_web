@@ -1,3 +1,14 @@
+class Cell {
+    constructor(f, i) {
+        this.f = f;
+        this.i = i;
+    }
+
+
+    show(context, scaleW, scaleH) {
+        context.fillRect(this.i * scaleW, this.f * scaleH, scaleW, this.scaleH);
+    }
+}
 
 class MyMaze {
 
@@ -11,6 +22,12 @@ class MyMaze {
         this.cols = width / scaleW;
 
         this.grid = [];
+
+        for(let i = 0; i < this.rows; i++) {
+            for(let f = 0; f < this.cols; f++) {
+                this.grid.push(new Cell(f, i))
+            }
+        }
 
         this.canvas = document.getElementById(idCanvas);
         this.canvas.width = this.width;
@@ -28,13 +45,16 @@ class MyMaze {
         this.isRunning = false;
     }
 
-    render() {
+    run() {
         if(this.isRunning) {
-            for(let i = 0; i < this.rows; i++) {
-                for(let f = 0; f < this.cols; f++) {
-                    this.context.fillRect(i * this.scaleW, f * this.scaleH, this.scaleW - 1, this.scaleH - 1);
-                }
-            }
+            //logica
+            this.render();
+        }
+    }
+
+    render() {
+        for(let i = 0; i < this.grid.length; i++) {
+            this.grid[i].show(this.context, this.scaleW, this.scaleH);
         }
     }
 }
@@ -50,9 +70,7 @@ function stopMaze() {
 }
 
 var loop = function() {
-    //lógica
-    //render
-    myMaze.render();
+    myMaze.run();
     window.requestAnimationFrame(loop);
 }
 window.requestAnimationFrame(loop);

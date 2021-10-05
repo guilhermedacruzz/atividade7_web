@@ -2,7 +2,7 @@ class Cell {
     constructor(i, f) {
         this.i = i;
         this.f = f;
-
+        this.visited = false;
         //            top   right  bottom  left
         this.walls = [true, true,  true, true];
     }
@@ -31,6 +31,11 @@ class Cell {
             context.lineTo(x, y);
         }
 
+        if(this.visited) {
+            context.fillStyle="#7F7F00";
+            context.fillRect(x, y, scale, scale);
+        }
+
         context.stroke();
     }
 }
@@ -53,6 +58,9 @@ class MyMaze {
             }
         }
 
+        this.current = this.grid[0];
+        console.log(this.current);
+
         this.canvas = document.getElementById(idCanvas);
         this.canvas.width = this.width;
         this.canvas.height = this.height;
@@ -71,9 +79,13 @@ class MyMaze {
 
     run() {
         if(this.isRunning) {
-            //logica
+            this.kick();
             this.render();
         }
+    }
+
+    kick() {
+        this.current.visited = true;
     }
 
     render() {

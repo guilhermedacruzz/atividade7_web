@@ -4,9 +4,8 @@ class Cell {
         this.i = i;
     }
 
-
     show(context, scaleW, scaleH) {
-        context.fillRect(this.i * scaleW, this.f * scaleH, scaleW, this.scaleH);
+        context.fillRect(this.i * scaleH, this.f * scaleW, scaleW - 1, scaleH - 1);
     }
 }
 

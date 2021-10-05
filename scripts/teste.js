@@ -1,30 +1,46 @@
 class Cell {
-    constructor(f, i) {
-        this.f = f;
+    constructor(i, f) {
         this.i = i;
+        this.f = f;
     }
 
-    show(context, scaleW, scaleH) {
-        context.fillRect(this.i * scaleH, this.f * scaleW, scaleW - 1, scaleH - 1);
+    show(context, scale) {
+        var x = this.i * scale;
+        var y = this.f * scale;
+
+        context.moveTo(x, y);
+        context.lineTo(x + scale, y);
+
+        context.moveTo(x + scale, y);
+        context.lineTo(x + scale, y + scale);
+
+        context.moveTo(x + scale, y + scale);
+        context.lineTo(x, y + scale);
+
+        context.moveTo(x, y + scale);
+        context.lineTo(x, y);
+
+        context.stroke();
+
+        //context.fillRect(this.i * scaleH, this.f * scaleW, scaleW - 1, scaleH - 1);
     }
 }
 
 class MyMaze {
 
-    constructor(width, height, scaleW, scaleH, idCanvas) {
+    constructor(width, height, scale, idCanvas) {
         this.width = width;
         this.height = height;
-        this.scaleW = scaleW;
-        this.scaleH = scaleH;
+        this.scale = scale;
 
-        this.rows = height / scaleH;
-        this.cols = width / scaleW;
+        this.rows = height / scale;
+        this.cols = width / scale;
 
         this.grid = [];
 
         for(let i = 0; i < this.rows; i++) {
             for(let f = 0; f < this.cols; f++) {
-                this.grid.push(new Cell(f, i))
+                this.grid.push(new Cell(f, i));
             }
         }
 
@@ -53,12 +69,12 @@ class MyMaze {
 
     render() {
         for(let i = 0; i < this.grid.length; i++) {
-            this.grid[i].show(this.context, this.scaleW, this.scaleH);
+            this.grid[i].show(this.context, this.scale);
         }
     }
 }
 
-myMaze = new MyMaze(400, 400, 40, 40, "myCanvas");
+myMaze = new MyMaze(600, 400, 40, "myCanvas");
 
 function startMaze() {
     myMaze.start();

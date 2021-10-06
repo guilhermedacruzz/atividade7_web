@@ -1,10 +1,16 @@
+
 class Cell {
     constructor(i, f) {
         this.i = i;
         this.f = f;
         this.visited = false;
-        //            top   right  bottom  left
-        this.walls = [true, true,  true, true];
+        this.wasRender = true;
+        this.walls = {
+            "top":true,
+            "right":true,
+            "bottom":true,
+            "left":true
+        }
     }
 
     index(i, f, rows, cols) {
@@ -17,6 +23,7 @@ class Cell {
     }
 
     checkNeighbors(grid, rows, cols) {
+        this.wasRender = true;
         var neighbors = [];
 
         var top = grid[this.index(this.i, this.f - 1, rows, cols)];
@@ -40,6 +47,10 @@ class Cell {
             neighbors.push(left);
         }
 
+        for(let i = 0; i < neighbors.length; i++) {
+            neighbors[i].wasRender = true;
+        }
+
         if(neighbors.length > 0) {
             var r = Math.floor(Math.random() * neighbors.length);
             return neighbors[r];
@@ -52,22 +63,22 @@ class Cell {
         var x = this.i * scale; 
         var y = this.f * scale;
 
-        if(this.walls[0]) {
+        if(this.walls["top"]) {
             context.moveTo(x, y);
             context.lineTo(x + scale, y); 
         }
 
-        if(this.walls[1]) {
+        if(this.walls["right"]) {
             context.moveTo(x + scale, y);
             context.lineTo(x + scale, y + scale);
         }
 
-        if(this.walls[2]) {
+        if(this.walls["bottom"]) {
             context.moveTo(x + scale, y + scale);
             context.lineTo(x, y + scale);
         }
 
-        if(this.walls[3]) {
+        if(this.walls["left"]) {
             context.moveTo(x, y + scale);
             context.lineTo(x, y);
         }
@@ -76,6 +87,8 @@ class Cell {
             context.fillStyle="#7F7F00";
             context.fillRect(x, y, scale, scale);
         }
+
+        this.wasRender = false;
     }
 }
 
@@ -138,17 +151,25 @@ class MyMaze {
         if(next) {
             this.current = next;
         }
+        else {
+            this.reset();
+        }
     }
 
     render() {
+        var control = false;
         for(let i = 0; i < this.grid.length; i++) {
-            this.grid[i].show(this.context, this.scale);
+            if(this.grid[i].wasRender) {
+                this.grid[i].show(this.context, this.scale);
+                control = true;
+            }
         }
-        this.context.stroke();
+        if(control)
+            this.context.stroke();
     }
 }
 
-myMaze = new MyMaze(600, 400, 40, "myCanvas");
+myMaze = new MyMaze(600, 400, 20, "myCanvas");
 
 function startMaze() {
     myMaze.start();

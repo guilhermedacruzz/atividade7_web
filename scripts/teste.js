@@ -115,6 +115,16 @@ class MyMaze {
         this.isRunning = false;
     }
 
+    reset() {
+        this.context.clearRect(0, 0, this.width, this.height);
+        this.grid = [];
+        for(let i = 0; i < this.rows; i++) {
+            for(let f = 0; f < this.cols; f++) {
+                this.grid.push(new Cell(f, i));
+            }
+        }
+    }
+
     run() {
         if(this.isRunning) {
             this.render();
@@ -146,6 +156,10 @@ function startMaze() {
 
 function stopMaze() {
     myMaze.stop();
+}
+
+function resetMaze() {
+    myMaze.reset();
 }
 
 var loop = function() {

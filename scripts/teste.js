@@ -7,11 +7,45 @@ class Cell {
         this.walls = [true, true,  true, true];
     }
 
+    index(i, f, rows, cols) {
+
+        if(i < 0 || f < 0 || i > cols - 1 || f > rows - 1) {
+            return -1;
+        }
+
+        return i + f * cols;
+    }
+
     checkNeighbors(grid, rows, cols) {
         var neighbors = [];
 
-        var right = grid[(this.i + 1) + this.f * cols];
+        var top = grid[this.index(this.i, this.f - 1, rows, cols)];
+        var right = grid[this.index(this.i + 1, this.f, rows, cols)];
+        var bottom = grid[this.index(this.i, this.f + 1, rows, cols)];
+        var left = grid[this.index(this.i - 1, this.f, rows, cols)];
 
+        if(top && !top.visited) {
+            neighbors.push(top);
+        }
+
+        if(right && !right.visited) {
+            neighbors.push(right);
+        }
+
+        if(bottom && !bottom.visited) {
+            neighbors.push(bottom);
+        }
+
+        if(left && !left.visited) {
+            neighbors.push(left);
+        }
+
+        if(neighbors.length > 0) {
+            var r = Math.floor(Math.random() * neighbors.length);
+            return neighbors[r];
+        } else {
+            return undefined;
+        }
     }
 
     show(context, scale) {
@@ -42,8 +76,6 @@ class Cell {
             context.fillStyle="#7F7F00";
             context.fillRect(x, y, scale, scale);
         }
-
-        context.stroke();
     }
 }
 
@@ -92,13 +124,17 @@ class MyMaze {
 
     kick() {
         this.current.visited = true;
-        this.current.checkNeighbors(this.grid, this.rows, this.cols);
+        var next = this.current.checkNeighbors(this.grid, this.rows, this.cols);
+        if(next) {
+            this.current = next;
+        }
     }
 
     render() {
         for(let i = 0; i < this.grid.length; i++) {
             this.grid[i].show(this.context, this.scale);
         }
+        this.context.stroke();
     }
 }
 

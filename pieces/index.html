@@ -6,10 +6,61 @@
 	<title>Checkout Mirror Fashion</title>
 	<!-- Se liga, não tem nenhum CSS nosso, todos são do Bootstrap, faça o download e 
 	     coloque na pasta do seu projeto, ou utilize a CDN:  -->
-	<link rel="stylesheet"  href="bcss/bootstrap.css"> <!-- Pasta do CSS Bootstrap que renomeei -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
 	<link rel="stylesheet"  href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"  integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUi  vzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 <body>
+	<nav class="navbar navbar-expand-md navbar-light bg-light">
+		<div class="container">
+		  <a class="navbar-brand" href="https://theonlinemirrorshop.com/">Mirror Shop</a>
+		  <!-- Codigo para gerar o botão em tela pequena--> 
+		  <button
+			class="navbar-toggler"  type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarSupportedContent"
+			  >
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <!--Codigo para o menu navbar ser inserido formatado bonitinho -->
+		  <div class="collapse navbar-collapse" 
+			  id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  <li class="nav-item">
+					  <a class="nav-link active" aria-current="page" 
+					   href="index.html">Home</a>
+				  </li>
+			  
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Produtos</a>
+				  </li>
+				<!-- Exemplo de botão dropdown com itens:-->
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#"
+						id="navbarDropdown" 
+						role="button"
+						data-bs-toggle="dropdown"
+						aria-expanded="false"> Visitante:</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">Minha Conta</a></li>
+							<li><a class="dropdown-item" href="#">Meus Pedidos</a></li>
+							<li><hr class="dropdown-divider" /></li>
+							<li><a class="dropdown-item" href="#">Logout</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+
+				<!-- Campo e botão de pesquisa (opcional e ainda não funcional)-->
+				<form class="d-flex">
+					<input class="form-control me-2" type="search"
+					placeholder="O que deseja?" aria-label="search"
+					/>
+					<button class="btn btn-success" type="submit">Pesquisar</button>
+				</form>
+		  </div>
+		</div>
+    </nav>
+
 	<header class="jumbotron">
 		<div class="container">
 			<!-- h1 e p que já tínhamos -->
@@ -20,8 +71,87 @@
     
 	<!--Colocando elementos num container flex-row -->
     <main class="container d-flex flex-row bd-highlight mb-3">
-	
+		<div class="card">
+			<!-- ... panel aqui ... -->
+			<h2 class="card-header"> Sua compra </h2>
+			<div class="card-body">
+				<img src="img/produtos/cardigan.png"  class="img-thumbnail img-fluid">
+				<dl>
+					<dt>Produto</dt>
+					<dd>Fuzzy Cardigan</dd>
+					<dt>Cor</dt>
+					<dd>verde</dd>
+					<dt>Tamanho</dt>
+					<dd>40</dd>
+					<dt>Valor</dt>
+					<dd>R$ 129,00</dd>
+				</dl>
+			</div>
+		</div>
+		<form class="d-flex flex-wrap">
+			<!-- ... todos os formularios aqui ... -->
+			<div class="form1 p-2 bd-highlight">
+				<fieldset>
+					<legend>Dados pessoais</legend>
+					<!-- ... Formulário dos dados pessoais ... -->
+					<div class="form-group"> 
+						<label for="nome">Nome completo</label>
+						<input type="text" class="form-control" id="nome" name="nome" autofocus>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">@</span>
+									</div>
+									<input type="email" class="form-control"  id="email" name="email"  placeholder="email@exemplo.com">
+							</div>
+						</div>
+						
+						<div class="form-group">
+						<label for="cpf">CPF</label>
+						<input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" > <br>
+						</div>
+						<div class="checkbox">
+						<label>
+						<input type="checkbox" value="sim" name="spam" checked>  Quero receber spam da Mirror Fashion
+						</label>
+						</div>
+				</fieldset>
+			</div>
+			
+			<div class="form2 p-2 bd-highlight">
+				<legend>Cartao de credito</legend>
+				<fieldset>
+					<div class="form-group">
+						<label for="numero-cartao">Numero - CVV</label>
+						<input type="text" class="form-control"  id="numero-cartao" name="numero-cartao">
+					</div>
+					<div class="form-group">
+						<label for="bandeira-cartao">Bandeira</label>
+						<select name="bandeira-cartao" id="bandeira-cartao"  class="form-control">
+						<option value="master">MasterCard</option>
+						<option value="visa">VISA</option>
+						<option value="amex">American Express</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="validade-cartao">Validade</label>
+						<input type="month" class="form-control"  id="validade-cartao" name="validade-cartao"> <br>
+						</div>
+					<button type="submit" class="btn btn-primary btn-lg">
+							<span class="fas fa-thumbs-up"></span>
+								Confirmar Pedido
+					</button>       
+				</fieldset>
+			</div>
+		</form>
 	</main>
     
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+		crossorigin="anonymous"
+	></script>
 </body>
 </html>

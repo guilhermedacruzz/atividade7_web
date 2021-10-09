@@ -76,43 +76,15 @@ header, .navbar {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(43, 45, 66, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-#slide-menu .carousel-inner, #slide-menu .carousel-item {
-    height: 80vh;
+.d-block {
+    background-color: red;
 }
 
-#slide-menu .carousel-inner, #slide-menu .carousel-item img{ 
-    object-fit: contain;
+.row {
+    background-color: royalblue;
 }
 
-#slide-menu .carousel-caption h5 {
-    font-size: clamp(1.7rem, 3.2vw, 4.2rem);
-    margin-bottom: 30px;
-    color: #fff;
-    text-shadow: 0 0 3px #000000;
-}
-  
-#slide-menu .carousel-caption p {
-    font-size: clamp(1.1rem, 2.3vw, 2.6rem);
-    font-weight: 300;
-    margin-bottom: 100px;
-    color: #fff;
-    text-shadow: 0 0 3px #000000;
+.col-md-6 {
+    background-color: salmon;
 }
 
-#slide-menu .carousel-caption a {
-    font-size: clamp(1rem, 1.1vw, 1.3rem);
-    color: #ffffff99;
-    background-color: #00081477;
-    text-decoration: none;
-    border: 2px solid #ffffff99;
-    border-radius: 8px;
-    text-transform: uppercase;
-    font-weight: 600;
-    padding: 13px 26px;
-}
-
-#slide-menu .carousel-caption a:hover {
-    color: #feec04;
-    text-decoration: underline;
-    border-color: #feec04;
-}

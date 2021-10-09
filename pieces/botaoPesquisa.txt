@@ -1,0 +1,7 @@
+				<!-- Campo e botão de pesquisa (opcional e ainda não funcional)-->
+				<form class="d-flex">
+					<input class="form-control me-2" type="search"
+					placeholder="O que deseja?" aria-label="search"
+					/>
+					<button class="btn btn-success" type="submit">Pesquisar</button>
+				</form>

@@ -1,0 +1,17 @@
+		<div class="card">
+		<!-- ... panel aqui ... -->
+			<h2 class="card-header"> Sua compra </h2>
+			<div class="card-body">
+				<img src="img/produtos/cardigan.png"  class="img-thumbnail img-fluid">
+				<dl>
+					<dt>Produto</dt>
+					<dd>Fuzzy Cardigan</dd>
+					<dt>Cor</dt>
+					<dd>verde</dd>
+					<dt>Tamanho</dt>
+					<dd>40</dd>
+					<dt>Valor</dt>
+					<dd>R$ 129,00</dd>
+				</dl>
+			</div>
+		</div>

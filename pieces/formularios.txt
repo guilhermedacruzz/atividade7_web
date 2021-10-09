@@ -1,0 +1,10 @@
+		<form class="d-flex flex-wrap">
+		<!-- ... todos os formularios aqui ... -->
+		    <div class="form1 p-2 bd-highlight">
+
+			</div>
+			
+			<div class="form2 p-2 bd-highlight">
+				<legend>Cartao de credito</legend>
+			</div>
+		</form>

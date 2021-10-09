@@ -31,6 +31,12 @@
                             <a class="nav-link" href="#">Sobre</a>
                         </li>
                     </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search"
+                        placeholder="O que deseja?" aria-label="search"
+                        />
+                        <button class="btn btn-success" type="submit">Pesquisar</button>
+                    </form>
                 </div>
             </nav>
         </div>
@@ -105,13 +111,82 @@
                 </div>
             </div>
 
-            <div class="d-flex justify-content-around flex-wrap">
-                <div class="d-flex flex-column justify-content-center">
-                    <p>açlsaçlfkeçl</p>
+            <div id="pay" class="container d-flex justify-content-around mb-3">
+                <div class="card">
+                    <!-- ... panel aqui ... -->
+                    <h2 class="card-header"> Sua compra </h2>
+                    <div class="card-body">
+                        <img src="assets/images/t-shirt/cadigan.png"  class="img-thumbnail img-fluid">
+                        <dl>
+                            <dt>Produto</dt>
+                            <dd>Fuzzy Cardigan</dd>
+                            <dt>Cor</dt>
+                            <dd>verde</dd>
+                            <dt>Tamanho</dt>
+                            <dd>40</dd>
+                            <dt>Valor</dt>
+                            <dd>R$ 129,00</dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="d-flex flex-column justify-content-center">
-                    <p>açlsaçlfkeçl</p>
-                </div>
+                <form class="d-flex flex-column justify-content-around flex-wrap">
+                    <!-- ... todos os formularios aqui ... -->
+                    <div class="form1 p-2 bd-highlight">
+                        <fieldset>
+                            <legend>Dados pessoais</legend>
+                            <!-- ... Formulário dos dados pessoais ... -->
+                            <div class="form-group"> 
+                                <label for="nome">Nome completo</label>
+                                <input type="text" class="form-control" id="nome" name="nome" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">@</span>
+                                            </div>
+                                            <input type="email" class="form-control"  id="email" name="email"  placeholder="email@exemplo.com">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                <label for="cpf">CPF</label>
+                                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00" > <br>
+                                </div>
+                                <div class="checkbox">
+                                <label>
+                                <input type="checkbox" value="sim" name="spam" checked>  Quero receber spam da Mirror Fashion
+                                </label>
+                                </div>
+                        </fieldset>
+                    </div>
+                    
+                    <div class="form2 p-2 bd-highlight">
+                        <legend>Cartao de credito</legend>
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="numero-cartao">Numero - CVV</label>
+                                <input type="text" class="form-control"  id="numero-cartao" name="numero-cartao">
+                            </div>
+                            <div class="form-group">
+                                <label for="bandeira-cartao">Bandeira</label>
+                                <select name="bandeira-cartao" id="bandeira-cartao"  class="form-control">
+                                <option value="master">MasterCard</option>
+                                <option value="visa">VISA</option>
+                                <option value="amex">American Express</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="validade-cartao">Validade</label>
+                                <input type="month" class="form-control"  id="validade-cartao" name="validade-cartao"> <br>
+                                </div>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                    <span class="fas fa-thumbs-up"></span>
+                                        Confirmar Pedido
+                            </button>       
+                        </fieldset>
+                    </div>
+                </form>
             </div>
         </div>
     </main>

@@ -77,17 +77,21 @@ header, .navbar {
 }
 
 .slide {
-    padding-top: 50px;
+    padding: 50px 0px;
 }
 
-.teste3 {
+.image-title {
     width: 250px;
     height: auto;
 }
 
+#slide-menu .d-flex .flex-column {
+    padding-left: 20px;
+}
+
 @media screen and (min-width: 992px){
 
-    .teste3 {
+    .image-title  {
         width: 380px;
     }
 }

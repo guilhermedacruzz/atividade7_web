@@ -8,7 +8,7 @@
 body {
     opacity: 1;
     font-family: "Poppins", sans-serif;
-    background-color: #edf2f4;
+    background-color: #fdfffc;
 }
 
 body::-webkit-scrollbar {
@@ -38,7 +38,7 @@ header, .navbar {
     padding: 0;
     font-weight: 700;
     text-decoration: none;
-    color: #2b2d42;
+    color: #011627;
     font-size: clamp(1rem, 1.1vw, 1.3rem);
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -46,20 +46,20 @@ header, .navbar {
 }
 
 .navbar-brand:hover {
-    color: #feec04;
+    color: #2ec4b6;
     transform: scale(0.9);
 }
 
 .navbar-nav a {
     margin: 0px 20px;
     text-decoration: none;
-    color: #2b2d42;
+    color: #011627;
     font-size: clamp(1rem, 1.1vw, 1.3rem);
     transition: 0.2s;
 }
 
 .navbar-nav a:hover {
-    color: #feec04;
+    color: #2ec4b6;
     transform: scale(0.9);
 }
 
@@ -69,7 +69,7 @@ header, .navbar {
 
 .navbar-toggler {
     margin-right: 15px;
-    border: 2px solid #2b2d42;
+    border: 2px solid #011627;
 }
 
 .navbar-toggler-icon {
@@ -89,11 +89,41 @@ header, .navbar {
     padding-left: 20px;
 }
 
+#slide-menu h3 {
+    color: #e71d36;
+    font-size: clamp(1rem, 1.4vw, 1.9rem);
+}
+
+#slide-menu h2 {
+    color: #011627;
+    font-size: clamp(1.9rem, 2.6vw, 3.2rem);
+}
+
+#slide-menu p {
+    color: #011627;
+    font-size: clamp(1.1rem, 1.5vw, 2rem);
+}
+
+#slide-menu a {
+    text-decoration: none;
+    color: #2ec4b6;
+    font-size: clamp(1rem, 1.1vw, 1.3rem);
+}
+
 @media screen and (min-width: 992px){
 
     .image-title  {
         width: 380px;
     }
+}
+
+#title {
+    padding-left: 20px;
+}
+
+#topic {
+    padding-left: 20px;
+    margin-top: 50px;
 }
 
 #topic img {
@@ -103,6 +133,10 @@ header, .navbar {
 
 #topic p {
     max-width: 180px;
+}
+
+#pay {
+    margin-top: 50px;
 }
 
 #pay img{

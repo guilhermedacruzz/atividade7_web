@@ -36,7 +36,7 @@ header, .navbar {
     color: #fff;
     font-weight: 700;
     text-decoration: none;
-    font-size: clamp(1rem, 1.1vw, 1.3rem);
+    font-size: clamp(2rem, 2.4vw, 3.2rem);
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -46,7 +46,6 @@ header, .navbar {
     text-decoration: none;
     color: #fff;
     font-size: clamp(1rem, 1.1vw, 1.3rem);
-    transition: 0.2s;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {

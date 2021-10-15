@@ -67,10 +67,12 @@ header, .navbar {
 .marketing h2 {
     margin: 20px 0px;
     color: #fff;
+    font-size: clamp(1.3rem, 1.5vw, 1.8rem);
 }
 
 .marketing p {
     color: #fff;
+    font-size: clamp(.8rem, 1.1vw, 1.5rem);
 }
 
 .marketing p,
@@ -86,6 +88,10 @@ header, .navbar {
 
 #footer a {
     color: #ff0;
+}
+
+.content {
+    margin-top: 100px;
 }
 
 .content .row,
@@ -112,11 +118,13 @@ header, .navbar {
 }
 
 .content h2 {
+    color: #fff;
     font-size: clamp(2rem, 3vw, 4rem);
     padding: 0px 10px;
 }
 
 .content p {
+    color: #fff;
     text-align: justify;
     padding: 0px 10px;
     font-size: clamp(.8rem, 1.1vw, 1.5rem);

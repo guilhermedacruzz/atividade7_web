@@ -77,3 +77,13 @@ header, .navbar {
 .marketing img {
     max-width: 160px;
 }
+
+#footer {
+    margin: 0px;
+    margin-top: 120px;
+    color: #fff;
+}
+
+#footer a {
+    color: #ff0;
+}

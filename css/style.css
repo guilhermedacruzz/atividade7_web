@@ -10,7 +10,6 @@
 
 body {
     background-color: #1C1931;
-    min-height: 1500px;
 }
 
 body::-webkit-scrollbar {
@@ -66,6 +65,7 @@ header, .navbar {
 }
 
 .marketing h2 {
+    margin: 20px 0px;
     color: #fff;
 }
 

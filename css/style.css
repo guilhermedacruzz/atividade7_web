@@ -61,7 +61,7 @@ header, .navbar {
 }
 
 .marketing {
-    margin-top: 120px;
+    margin-top: 60px;
 }
 
 .marketing h2 {
@@ -86,4 +86,42 @@ header, .navbar {
 
 #footer a {
     color: #ff0;
+}
+
+.content .row,
+.content .col-md-5,
+.content .col-md-7 {
+    margin: 0;
+    padding: 0;
+}
+
+.content .row {
+    padding: 40px;
+    margin-top: 25px;
+}
+
+.content .col-md-5,
+.content .col-md-7 {
+    padding: 15px;
+}
+
+.content iframe,
+.content img {
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.content h2 {
+    font-size: clamp(2rem, 3vw, 4rem);
+    padding: 0px 10px;
+}
+
+.content p {
+    text-align: justify;
+    padding: 0px 10px;
+    font-size: clamp(.8rem, 1.1vw, 1.5rem);
+}
+
+.content a {
+    text-decoration: none;
 }

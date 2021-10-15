@@ -65,6 +65,15 @@ header, .navbar {
     margin-top: 120px;
 }
 
+.marketing h2 {
+    color: #fff;
+}
+
 .marketing p {
-    max-width: 140px;
+    color: #fff;
+}
+
+.marketing p,
+.marketing img {
+    max-width: 160px;
 }

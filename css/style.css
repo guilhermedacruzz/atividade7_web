@@ -80,16 +80,6 @@ header, .navbar {
     max-width: 160px;
 }
 
-#footer {
-    margin: 0px;
-    margin-top: 120px;
-    color: #fff;
-}
-
-#footer a {
-    color: #ff0;
-}
-
 .content {
     margin-top: 100px;
 }
@@ -132,4 +122,14 @@ header, .navbar {
 
 .content a {
     text-decoration: none;
+}
+
+#footer {
+    margin: 0px;
+    margin-top: 120px;
+    color: #fff;
+}
+
+#footer a {
+    color: #ff0;
 }

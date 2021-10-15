@@ -41,14 +41,15 @@
     text-transform: uppercase;
     color: #fff;
     text-shadow: 0 0 3px #000000;
-    font-size: clamp(2rem, 4vw, 8rem);
+    font-weight: 700;
+    font-size: clamp(3.5rem, 5.5vw, 7rem);
     letter-spacing: 4px;
 }
 
 .center button {
     margin-top: 10px;
     padding: 10px 35px;
-    font-size: clamp(.8rem, 1.1vw, 1.5rem);
+    font-size: clamp(1rem, 1.3vw, 1.5rem);
     background-color: #ffffff44;
     color: #fff;
     border: none;

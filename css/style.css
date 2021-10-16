@@ -65,6 +65,16 @@ header, .navbar {
     text-align: center;
 }
 
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.marketing .row {
+    padding: 0px;
+    margin: 0px;
+}
+
 .marketing {
     margin-top: 60px;
 }

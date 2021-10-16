@@ -138,3 +138,22 @@ header, .navbar {
 #footer a {
     color: #ff0;
 }
+
+.modal-dialog {
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+.modal-content {
+    background-color: #1C1931;
+    color: #fff;
+}
+
+.modal-content button {
+    padding: 8px 28px;
+    font-size: clamp(0.8rem, 1.1vw, 1.3rem);
+    background-color: #ffffff44;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}

@@ -10,7 +10,7 @@ function calcular() {
 
     let resposta = "Zoa não parceiro";
 
-    if(resposta) {
+    if(valor && mes) {
         resposta = `R: ${valor * taxa * mes}`;
     }
 

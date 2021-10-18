@@ -2,11 +2,6 @@
     margin: 35px 0px;
 }
 
-.forms fieldset {
-    border: 2px solid #fff;
-    border-radius: 8px;
-}
-
 .forms fieldset legend {
     color: #feec04;  
 }

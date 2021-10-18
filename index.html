@@ -73,34 +73,25 @@
                         <h2 class="featurette-heading">Lorem ipsum, dolor sit amet consectetur adipisicing.<span class="text-muted">Lorem, ipsum.</span></h2>
                         <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptatem nam officiis eveniet facilis dolorum. Molestiae nesciunt labore praesentium dolore ex magnam pariatur aliquam beatae et, officia aut tempora ipsum.</p>
                     </div>
-                    <div class="col-md-5 order-md-1" align="center">
+                    <div class="col-md-5 order-md-1">
                         <form class="forms" action="">
                             <fieldset>
                                 <legend> Atividade 7 B</legend>
-                                <div class="row">
-                                    <div class="col-xl-6" align="center">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text">$</span>
-                                            <span class="input-group-text">0.00</span>
-                                            <input type="text" id="valor" class="form-control">
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6" align="center">
-                                        <div class="input-group mb-3">
-                                            <span class="input-group-text">M</span>
-                                            <span class="input-group-text">0</span>
-                                            <input type="text" id="mes" class="form-control">
-                                        </div>
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="id" class="form-label">Digite o valor</label>
+                                    <input type="text" id="valor" class="form-control">
+                                    <div id="emailHelp" class="form-text">Digite um valor flutuante. Ex: 5000</div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-xl-6" align="center">    
-                                        <label id="resposta"></label>
-                                    </div>
-                                    <div class="col-xl-6" align="center">    
-                                        <button type="button" class="btn btn-primary" onclick="calcular()">Enviar</button>
-                                    </div>
+                                <div class="mb-3">
+                                    <label for="mes" class="form-label">Digite a Quantidade de mês</label>
+                                    <input type="text" id="mes" class="form-control">
+                                    <div id="emailHelp" class="form-text">Digite um número inteiro. Ex: 10</div>
                                 </div>
+                                <div class="mb-3">
+                                    <label id="resposta"></label>
+                                </div>
+
+                                <button type="button" class="btn btn-primary" onclick="calcular()">Enviar</button>
                             </fieldset>
                         </form>
                     </div>

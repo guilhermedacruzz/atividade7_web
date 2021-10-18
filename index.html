@@ -38,7 +38,7 @@
     
     <main>
         <div class="container-fluid">
-            <section class="parallax">
+            <div class="parallax">
                 <div class="row">
                     <div class="col">
                         <div class="center">
@@ -56,7 +56,7 @@
                         <script src="scripts/parallax.js"></script>  
                     </div>
                 </div>
-            </section>
+            </div>
             <div class="content">
                 <div class="row featurette">
                     <div class="col-md-7">
@@ -68,14 +68,14 @@
                             <fieldset>
                                 <legend> Atividade 7 B</legend>
                                 <div class="mb-3">
-                                    <label for="id" class="form-label">Digite o valor</label>
-                                    <input type="text" id="valor" class="form-control">
-                                    <div id="emailHelp" class="form-text">Digite um valor flutuante. Ex: 5000</div>
+                                    <label for="valor" class="form-label">Digite o Valor</label>
+                                    <input type="text" name="valor" id="valor" class="form-control">
+                                    <div id="valor" class="form-text">Digite um valor flutuante. Ex: 5000</div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="mes" class="form-label">Digite a Quantidade de mês</label>
-                                    <input type="text" id="mes" class="form-control">
-                                    <div id="emailHelp" class="form-text">Digite um número inteiro. Ex: 10</div>
+                                    <input type="text" name="mes" id="mes" class="form-control">
+                                    <div id="mes" class="form-text">Digite um número inteiro. Ex: 10</div>
                                 </div>
                                 <div class="mb-3">
                                     <label id="resposta"></label>
@@ -117,12 +117,14 @@
                         <h2>Lorem.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sequi ab!</p>
                     </div>
+
                     <div class="col-md-6 col-lg-4" align="center">
                         <img src="assets/icon/face.png">
                 
                         <h2>Lorem.</h2>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, optio.</p>
                     </div>
+                    
                     <div class="col-md-6 col-lg-4" align="center">
                         <img src="assets/icon/pngegg.png">
                 

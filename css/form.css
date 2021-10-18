@@ -9,3 +9,18 @@
 .forms label {
     color: #fff;
 }
+
+.forms button {
+    padding: 8px 25px;
+    font-size: clamp(.8rem, 1.1vw, 1.3rem);
+    background-color: #ffffff44;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+}
+
+.forms button:hover {
+    background-color: #fff;
+    color: #1C1931;
+    cursor: pointer;
+}

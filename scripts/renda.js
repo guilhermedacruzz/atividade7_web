@@ -5,7 +5,7 @@ function calcular() {
     let mesInput = document.querySelector("#mes");
     let respostaLabel = document.querySelector("#resposta");
 
-    let valor = parseInt(valorInput.value);
+    let valor = parseFloat(valorInput.value);
     let mes = parseInt(mesInput.value);
 
     let resposta = "Zoa não parceiro";

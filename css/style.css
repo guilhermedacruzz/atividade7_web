@@ -47,6 +47,11 @@ header, .navbar {
     font-size: clamp(1rem, 1.1vw, 1.3rem);
 }
 
+.navbar-brand:hover,
+.nav-link:hover {
+    color: #feec04;
+}
+
 .navbar-expand-lg .navbar-nav .nav-link {
     padding: 1rem .8rem;
 }
@@ -146,7 +151,12 @@ header, .navbar {
 }
 
 #footer a {
-    color: #ff0;
+    text-decoration: none;
+    color: #feec04;
+}
+
+#footer a:hover {
+    text-decoration: underline;
 }
 
 .modal-dialog {
@@ -154,7 +164,7 @@ header, .navbar {
 }
 
 .modal-content {
-    background-color: #12273B;
+    background-color: #0e1f2e;
     color: #fff;
 }
 

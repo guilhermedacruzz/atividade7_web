@@ -186,3 +186,10 @@ header, .navbar {
     border: none;
     border-radius: 25px;
 }
+
+@media screen and (max-width: 992px){
+
+    .navbar {
+        background-color: #12273B99;
+    }
+}
